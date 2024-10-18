@@ -1,0 +1,34 @@
+package selenium;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Test40
+{
+	public static void main(String[] args) throws Exception
+	{
+		//open browser
+		WebDriver driver=new ChromeDriver();
+		//Launch site
+		driver.get("https://www.amazon.in");
+		Thread.sleep(5000);
+		//collect all images
+		List<WebElement> images=driver.findElements(By.xpath("//img")); 
+		//Goto each image in that list
+		int index=0;
+		for(WebElement image:images)
+		{
+			if(image.isDisplayed())
+			{
+				index++;
+				System.out.println(index+")."+image.getAttribute("src"));
+			}
+		}
+		//close site
+		driver.close();
+	}
+}
