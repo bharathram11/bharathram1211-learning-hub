@@ -1,0 +1,15 @@
+# Build and test output
+**/target/
+test-output/
+*.log
+
+# IDE files
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
